@@ -1,7 +1,7 @@
-const { ErrorHandler } = require('./middleware/errors');
-const { successHandler } = require('./middleware/success');
-const User = require('./models/user');
-const Task = require('./models/task');
+const { ErrorHandler } = require("../middleware/errors");
+const { successHandler } = require("../middleware/success");
+const User = require("../models/user");
+const Task = require("../models/task");
 
 const user = async (req, res, next) => {
   try {

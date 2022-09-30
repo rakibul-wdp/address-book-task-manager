@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { dateValidator, dateConverter } = require('../utils');
+const { dateValidator, dateConverter } = require('../utils/utils');
 
 const taskSchema = mongoose.Schema({
   name: {
