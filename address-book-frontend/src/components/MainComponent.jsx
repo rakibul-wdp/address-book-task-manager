@@ -184,9 +184,9 @@ const MainComponent = () => {
 
   return (
     <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", height: "fit-content" }}>
-      <div style={{ width: "94%", minHeight: 90, display: "flex", justifyContent: "center", border: "2px solid black", height: "fit-content" }}>
+      <div style={{ width: "94%", minHeight: 90, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid black", borderRadius: "5px", borderColor: "gray", height: "fit-content" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "93%", height: "94%", flexWrap: "wrap" }}>
-          <div >
+          <div>
             <div style={{ height: 24, display: "flex", flexDirection: "row", alignItems: "center" }}><span style={{ fontWeight: "bold", fontSize: 22 }}>Users</span> <div style={{ backgroundColor: "#afa", borderRadius: 25, width: 75, textAlign: "center", marginLeft: 8 }}>{userData.length} users </div></div>
             <div>Manage your team members and their account permission here</div>
           </div>
@@ -198,16 +198,16 @@ const MainComponent = () => {
         </div>
       </div>
 
-      <div style={{ width: "94%", display: "flex", alignItems: "center", flexDirection: "column", border: "2px solid black", justifyContent: "center", height: "fit-content" }} key={dialogKey}>
+      <div style={{ width: "94%", display: "flex", alignItems: "center", flexDirection: "column", border: "1px solid black", border: "1px solid black", borderRadius: "5px", borderColor: "gray", justifyContent: "center", height: "fit-content" }} key={dialogKey}>
 
-        <div className={classes.box2}>
+        <div className={classes.box2} style={{ fontSize: "20px", fontWeight: "bold", textDecoration: "underline", justifyContent: "center" }}>
           <div className={classes.box2DivTitle} style={{ width: "53.7%", marginLeft: 60 }} >Name</div>
           <div className={classes.box2DivTitle} style={{ width: "8.9%" }}>Phone No</div>
         </div>
         {
           currentPosts.map((item, index) => {
             return (
-              <div key={index} className={classes.box2} style={{ backgroundColor: (index & 1) ? "#d9d4d4" : "white", minHeight: 100, height: "fit-content", display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
+              <div key={index} className={classes.box2} style={{ backgroundColor: (index & 1) ? "#d9d4d4" : "#f5f0f0", borderRadius: "8px", padding: "5px 0 5px 0", marginBottom: "1.5rem", height: "fit-content", display: "flex", alignItems: "center", justifyContent: "space-around", flexWrap: "wrap" }}>
 
                 <div style={{ height: "100%", width: "40%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                   <span>{item.name}</span>
@@ -228,7 +228,7 @@ const MainComponent = () => {
           })
         }
       </div>
-      <div style={{ height: 62, width: "94%", display: "flex", justifyContent: "center", alignItems: "center", border: "2px solid black" }}>
+      <div style={{ height: 62, width: "94%", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid black", borderRadius: "5px", borderColor: "gray", }}>
         <Stack spacing={2}>
           <Pagination count={10} color="primary"
             onChange={(e, value) => { setCurrentPage(value) }}
