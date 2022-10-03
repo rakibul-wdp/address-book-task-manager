@@ -1,4 +1,7 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { Box, TextField } from '@mui/material';
+import { setSearchText } from '../redux/actions/ProductActions';
 
 const Header = () => {
   //Redux part
@@ -10,10 +13,12 @@ const Header = () => {
 
   return (
     <>
-      <div style={{ width: "100%", display: "flex", minHeight: 178, justifyContent: "center", height: "fit-content", marginBottom: 5 }}>
-        <div style={{ display: "flex", flexDirection: "column", width: "82%" }}>
-          <div><h1>Scizers Technologies LLP Assignment</h1></div>
-          <div style={{ display: "flex", flexDirection: "row", border: "2px solid black", borderRadius: 8, width: "50%" }}>
+      <div style={{ width: "100%", display: "flex", minHeight: 178, justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", width: "82%" }}>
+          <div>
+            <h2>Address Book Manager</h2>
+          </div>
+          <div style={{ display: "flex", flexDirection: "row", width: "50%" }}>
             <Box
               component="form"
               sx={{

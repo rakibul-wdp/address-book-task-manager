@@ -183,65 +183,59 @@ const MainComponent = () => {
   }
 
   return (
-    <>
-      {
-        <>
-          <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", height: "fit-content" }}>
-            <div style={{ width: "94%", minHeight: 90, display: "flex", justifyContent: "center", border: "2px solid black", height: "fit-content" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "93%", height: "94%", flexWrap: "wrap" }}>
-                <div >
-                  <div style={{ height: 24, display: "flex", flexDirection: "row", alignItems: "center" }}><span style={{ fontWeight: "bold", fontSize: 22 }}>Users</span> <div style={{ backgroundColor: "#afa", borderRadius: 25, width: 75, textAlign: "center", marginLeft: 8 }}>{userData.length} users </div></div>
-                  <div>Manage your team members and their account permission here</div>
-                </div>
-
-                <div style={{ display: "flex", flexDirection: "row", width: 255, justifyContent: "space-between" }}>
-                  <CSVLink {...csvLink} style={{ display: "flex", textDecoration: "none", color: "black", backgroundColor: "white", height: 32, borderRadius: 5, justifyContent: "center", alignItems: "center" }}><span>Download CSV</span></CSVLink>
-                  <FormData />
-                </div>
-              </div>
-            </div>
-
-            <div style={{ width: "94%", display: "flex", alignItems: "center", flexDirection: "column", border: "2px solid black", justifyContent: "center", height: "fit-content" }} key={dialogKey}>
-
-              <div className={classes.box2}>
-                <div className={classes.box2DivTitle} style={{ width: "53.7%", marginLeft: 60 }} >Name</div>
-                <div className={classes.box2DivTitle} style={{ width: "8.9%" }}>Phone No</div>
-              </div>
-              {
-                currentPosts.map((item, index) => {
-                  return (
-                    <div key={index} className={classes.box2} style={{ backgroundColor: (index & 1) ? "#d9d4d4" : "white", minHeight: 100, height: "fit-content", display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
-
-                      <div style={{ height: "100%", width: "40%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                        <span>{item.name}</span>
-                      </div>
-
-                      <div className={classes.box2Div} style={{ width: "30%" }}>{item.phone_no}</div>
-
-                      <div className={classes.box2Div} style={{ width: 150 }} id={index} >
-                        {
-                          <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
-                            <div className={classes.delAndEditDiv} style={{ width: "45%", }}><img src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="" style={{ height: "78%", width: "50%" }} onClick={handleDelete} id={index} /></div>
-                            <div className={classes.delAndEditDiv} style={{ width: "45%", }} id={index} onClick={handleEdit} ><EditContact /></div>
-                          </div>
-                        }
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
-            <div style={{ height: 62, width: "94%", display: "flex", justifyContent: "center", alignItems: "center", border: "2px solid black" }}>
-              <Stack spacing={2}>
-                <Pagination count={10} color="primary"
-                  onChange={(e, value) => { setCurrentPage(value) }}
-                />
-              </Stack>
-            </div>
+    <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", height: "fit-content" }}>
+      <div style={{ width: "94%", minHeight: 90, display: "flex", justifyContent: "center", border: "2px solid black", height: "fit-content" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "93%", height: "94%", flexWrap: "wrap" }}>
+          <div >
+            <div style={{ height: 24, display: "flex", flexDirection: "row", alignItems: "center" }}><span style={{ fontWeight: "bold", fontSize: 22 }}>Users</span> <div style={{ backgroundColor: "#afa", borderRadius: 25, width: 75, textAlign: "center", marginLeft: 8 }}>{userData.length} users </div></div>
+            <div>Manage your team members and their account permission here</div>
           </div>
-        </>
-      }
-    </>
+
+          <div style={{ display: "flex", flexDirection: "row", width: 255, justifyContent: "space-between" }}>
+            <CSVLink {...csvLink} style={{ display: "flex", textDecoration: "none", color: "black", backgroundColor: "white", height: 32, borderRadius: 5, justifyContent: "center", alignItems: "center" }}><span>Download CSV</span></CSVLink>
+            <FormData />
+          </div>
+        </div>
+      </div>
+
+      <div style={{ width: "94%", display: "flex", alignItems: "center", flexDirection: "column", border: "2px solid black", justifyContent: "center", height: "fit-content" }} key={dialogKey}>
+
+        <div className={classes.box2}>
+          <div className={classes.box2DivTitle} style={{ width: "53.7%", marginLeft: 60 }} >Name</div>
+          <div className={classes.box2DivTitle} style={{ width: "8.9%" }}>Phone No</div>
+        </div>
+        {
+          currentPosts.map((item, index) => {
+            return (
+              <div key={index} className={classes.box2} style={{ backgroundColor: (index & 1) ? "#d9d4d4" : "white", minHeight: 100, height: "fit-content", display: "flex", justifyContent: "space-around", flexWrap: "wrap" }}>
+
+                <div style={{ height: "100%", width: "40%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <span>{item.name}</span>
+                </div>
+
+                <div className={classes.box2Div} style={{ width: "30%" }}>{item.phone_no}</div>
+
+                <div className={classes.box2Div} style={{ width: 150 }} id={index} >
+                  {
+                    <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
+                      <div className={classes.delAndEditDiv} style={{ width: "45%", }}><img src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="" style={{ height: "78%", width: "50%" }} onClick={handleDelete} id={index} /></div>
+                      <div className={classes.delAndEditDiv} style={{ width: "45%", }} id={index} onClick={handleEdit} ><EditContact /></div>
+                    </div>
+                  }
+                </div>
+              </div>
+            )
+          })
+        }
+      </div>
+      <div style={{ height: 62, width: "94%", display: "flex", justifyContent: "center", alignItems: "center", border: "2px solid black" }}>
+        <Stack spacing={2}>
+          <Pagination count={10} color="primary"
+            onChange={(e, value) => { setCurrentPage(value) }}
+          />
+        </Stack>
+      </div>
+    </div>
   )
 }
 
