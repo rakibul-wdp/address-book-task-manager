@@ -12,7 +12,7 @@ export const selectedProducts = (products) => {
     payload: products,
   }
 }
-export const changeImageandCount = (products) => {
+export const changeImageAndCount = (products) => {
   return {
     type: ActionTypes.CHANGE_NAME_AND_NUMBER,
     payload: products,
